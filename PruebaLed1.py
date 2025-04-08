@@ -1,6 +1,7 @@
 import gpiod
 import time
 
+print(dir(gpiod))
 LED_PIN = 18
 
 
