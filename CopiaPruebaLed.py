@@ -4,7 +4,7 @@ from time import sleep
 
 # 2 Definir constantes
 ESPERA = 0.5
-PIN = 3  # Usar número de pin GPIO (BCM), no el número físico (BOARD)
+PIN = 18  # Usar número de pin GPIO (BCM), no el número físico (BOARD)
 
 # 3 Configurar el LED (gpiozero maneja el hardware automáticamente)
 led = LED(PIN)  # Usa el esquema de numeración BCM por defecto
