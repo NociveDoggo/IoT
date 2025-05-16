@@ -15,7 +15,8 @@ BLYNK_AUTH_TOKEN = "sL86IApPfR656oI-KaC97RTI1RIxELbu"
 blynk = BlynkLib.Blynk(BLYNK_AUTH_TOKEN, server='blynk.cloud', port=80)
 LedPin = 10
 HumidityPin = 18
-humidity_sensor = DHT11(HumidityPin)
+# Initialize the DHT11 sensor
+sensor = Adafruit_DHT.DHT11
 
 def saveData(led):
     # Conexión a la base de datos SQLite
@@ -95,16 +96,17 @@ led = LED(LedPin)
 
 while True:
     try:
-        # Read temperature
-        temperature = sensor.temperature
-        # Read humidity
-        humidity = sensor.humidity
+        # Read temperature and humidity
+        humidity, temperature = Adafruit_DHT.read_retry(sensor, HumidityPin)
         
-        print(f"Temperature: {temperature}°C")
-        print(f"Humidity: {humidity}%")
-        
-        sleep(2)  # Wait 2 seconds between readings
+        if humidity is not None and temperature is not None:
+            print(f"Temperature: {temperature:.1f}°C")
+            print(f"Humidity: {humidity:.1f}%")
+        else:
+            print("Failed to get reading. Try again!")
+            
+        time.sleep(2)  # Wait 2 seconds between readings
         
     except Exception as e:
         print(f"Error reading sensor: {e}")
-        sleep(2)
+        time.sleep(2)
