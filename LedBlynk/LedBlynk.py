@@ -1,7 +1,24 @@
 ## Codigo que funciona con LED
+import datetime
 import BlynkLib
 from gpiozero import LED
 import time
+import sqlite3
+from datetime import datetime
+def saveData(led):
+    # Conexión a la base de datos SQLite
+    connection = sqlite3.connect("prueba.db")
+    cursor = connection.cursor()
+
+    # Insertar el valor en la tabla 'led'
+    cursor.execute('''
+        INSERT INTO led (ltest1)
+        VALUES (?)
+    ''', (int(led),))  # Se pasa como una tupla con coma
+
+    # Guardar los cambios y cerrar la conexión
+    connection.commit()
+    connection.close()
 
 BLYNK_AUTH_TOKEN = "sL86IApPfR656oI-KaC97RTI1RIxELbu"
 blynk = BlynkLib.Blynk(BLYNK_AUTH_TOKEN, server='blynk.cloud', port=80)
