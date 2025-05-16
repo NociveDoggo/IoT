@@ -33,7 +33,7 @@ def saveData(led):
     connection.close()
 
 # # Configuración SQLite
-# DATABASE_NAME = 'led_control.db'
+# DATABASE_NAME = 'sensor_data_test.db'
 
 # def init_database():
 #     """Inicializa la base de datos y crea la tabla si no existe"""
