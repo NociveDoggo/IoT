@@ -5,9 +5,8 @@ import datetime
 import time
 import sqlite3
 from datetime import datetime
-
-
-from gpiozero import LED, DHT11
+import Adafruit_DHT
+from gpiozero import LED
 
 
 
