@@ -3,7 +3,7 @@ import BlynkLib
 from gpiozero import LED
 import time
 
-BLYNK_AUTH_TOKEN = "5biBY2fS84cyCHbeU_lgTTEe4EFz-DAY"
+BLYNK_AUTH_TOKEN = "sL86IApPfR656oI-KaC97RTI1RIxELbu"
 blynk = BlynkLib.Blynk(BLYNK_AUTH_TOKEN, server='blynk.cloud', port=80)
 PIN = 18
 
