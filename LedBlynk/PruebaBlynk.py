@@ -1,4 +1,4 @@
-## Prueba de Blynk sin Led
+## Prueba de Blynk sin Led para determinar cambios en el switch
 import BlynkLib
 import time
 
