@@ -1,4 +1,4 @@
-## Prueba de Blynk sin Led
+## Codigo que funciona con LED
 import BlynkLib
 from gpiozero import LED
 import time
